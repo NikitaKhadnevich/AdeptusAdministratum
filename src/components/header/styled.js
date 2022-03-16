@@ -7,7 +7,7 @@ const IconBlock = styled(
   Box,
   appTheme
 )({
-  maxWidth: '140px',
+  maxWidth: 'fit-content',
   justifyContent: 'center',
   display: 'flex',
   minHeight: '0px !important',
@@ -15,7 +15,7 @@ const IconBlock = styled(
     height: 'fitContent',
     alignSelf: 'center',
     justifySekf: 'center',
-    fontWeight: '400',
+    fontWeight: '600',
   },
 });
 export default IconBlock;
