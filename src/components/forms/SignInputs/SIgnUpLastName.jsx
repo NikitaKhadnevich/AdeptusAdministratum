@@ -28,16 +28,16 @@ export default SignUpLastName;
 
 SignUpLastName.propTypes = {
   lastName: PropTypes.string,
-  touched: PropTypes.bool,
+  touched: PropTypes.instanceOf(Object),
   onChangeAccum: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.bool,
+  errors: PropTypes.instanceOf(Object),
 };
 
 SignUpLastName.defaultProps = {
   lastName: 'lastName',
-  touched: 'touched',
+  touched: {},
   onChangeAccum: 'onChangeAccum',
   handleBlur: 'handleBlur',
-  errors: 'errors',
+  errors: {},
 };

@@ -1,8 +1,9 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { func, string } from 'prop-types';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import { FormAddBox, FormAddGrid, GridButton, AddButton } from './styled';
@@ -74,12 +75,12 @@ export default InputAddNote;
 InputAddNote.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  errors: PropTypes.bool,
-  touched: PropTypes.bool,
-  handleChange: PropTypes.func,
-  isValid: PropTypes.bool,
+  errors: PropTypes.string,
+  touched: PropTypes.string,
   setFieldTouched: PropTypes.func,
   handleBlur: PropTypes.func,
+  handleChange: PropTypes.func,
+  isValid: PropTypes.bool,
   handleSubmit: PropTypes.func,
 };
 
@@ -88,9 +89,9 @@ InputAddNote.defaultProps = {
   description: 'description',
   errors: 'errors',
   touched: 'touched',
-  handleChange: 'handleChange',
-  isValid: 'isValid',
-  setFieldTouched: 'setFieldTouched',
-  handleBlur: 'handleBlur',
-  handleSubmit: 'handleSubmit',
+  setFieldTouched: func,
+  handleBlur: func,
+  handleChange: func,
+  isValid: false || true,
+  handleSubmit: func,
 };

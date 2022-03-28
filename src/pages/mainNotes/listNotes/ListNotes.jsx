@@ -64,8 +64,8 @@ ListNotes.propTypes = {
   handleItem: PropTypes.func,
   handleSaveNote: PropTypes.func,
   handleDelete: PropTypes.func,
-  noteList: PropTypes.string,
-  noteItem: PropTypes.string,
+  noteList: PropTypes.oneOfType([PropTypes.any, PropTypes.array]),
+  noteItem: PropTypes.instanceOf(Object),
   index: PropTypes.number,
 };
 
@@ -73,7 +73,7 @@ ListNotes.defaultProps = {
   handleItem: 'handleItem',
   handleSaveNote: 'handleSaveNote',
   handleDelete: 'handleDelete',
-  noteList: 'noteList',
-  noteItem: 'noteItem',
+  noteList: [] || undefined,
+  noteItem: {} || undefined,
   index: 'index',
 };

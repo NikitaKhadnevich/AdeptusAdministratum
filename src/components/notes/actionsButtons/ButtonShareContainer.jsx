@@ -30,8 +30,8 @@ const ButtonShareContainer = ({ id }) => {
 export default ButtonShareContainer;
 
 ButtonShareContainer.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 ButtonShareContainer.defaultProps = {
-  id: 'id',
+  id: 1 || 'id',
 };

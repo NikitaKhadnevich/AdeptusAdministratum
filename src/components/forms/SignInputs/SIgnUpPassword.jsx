@@ -29,16 +29,16 @@ export default SignPassword;
 
 SignPassword.propTypes = {
   password: PropTypes.string,
-  touched: PropTypes.bool,
+  touched: PropTypes.instanceOf(Object),
   onChangeAccum: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.bool,
+  errors: PropTypes.instanceOf(Object),
 };
 
 SignPassword.defaultProps = {
   password: 'password',
-  touched: 'touched',
+  touched: {},
   onChangeAccum: 'onChangeAccum',
   handleBlur: 'handleBlur',
-  errors: 'errors',
+  errors: {},
 };

@@ -70,13 +70,13 @@ const ListNoteStatus = ({ handleItem, noteList, noteItem }) => (
 export default ListNoteStatus;
 
 ListNoteStatus.propTypes = {
-  noteList: PropTypes.string,
-  noteItem: PropTypes.string,
+  noteList: PropTypes.oneOfType([PropTypes.any, PropTypes.array]),
+  noteItem: PropTypes.instanceOf(Object),
   handleItem: PropTypes.func,
 };
 
 ListNoteStatus.defaultProps = {
-  noteList: 'noteList',
-  noteItem: 'noteItem',
+  noteList: [] || undefined,
+  noteItem: {} || undefined,
   handleItem: 'handleItem',
 };

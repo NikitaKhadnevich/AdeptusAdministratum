@@ -30,16 +30,16 @@ export default SignUpBirth;
 
 SignUpBirth.propTypes = {
   birthday: PropTypes.string,
-  touched: PropTypes.bool,
+  touched: PropTypes.instanceOf(Object),
   onChangeAccum: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.string,
+  errors: PropTypes.instanceOf(Object),
 };
 
 SignUpBirth.defaultProps = {
   birthday: 'birthday',
-  touched: 'touched',
+  touched: {},
   onChangeAccum: 'onChangeAccum',
   handleBlur: 'handleBlur',
-  errors: 'errors',
+  errors: {},
 };

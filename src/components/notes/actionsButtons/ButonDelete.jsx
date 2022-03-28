@@ -22,13 +22,13 @@ const ButtonDelete = ({ index, handleDelete, id }) => (
 ButtonDelete.propTypes = {
   handleDelete: PropTypes.func,
   index: PropTypes.number,
-  id: PropTypes.number,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 ButtonDelete.defaultProps = {
   handleDelete: 'handleDelete',
   index: 'index',
-  id: 'id',
+  id: 1 || 'id',
 };
 
 export default ButtonDelete;

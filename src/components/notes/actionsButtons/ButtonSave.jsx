@@ -20,13 +20,13 @@ const ButtonSave = ({ id, handleSaveNote, updateDescription }) => (
 
 ButtonSave.propTypes = {
   handleSaveNote: PropTypes.func,
-  updateDescription: PropTypes.array,
-  id: PropTypes.number,
+  updateDescription: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 ButtonSave.defaultProps = {
   handleSaveNote: 'handleSaveNote',
   updateDescription: 'updateDescription',
-  id: 'id',
+  id: 1 || 'id',
 };
 
 export default ButtonSave;

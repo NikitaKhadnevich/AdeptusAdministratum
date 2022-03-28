@@ -19,7 +19,7 @@ const NotesFetching = ({ isFetching }) => {
 export default NotesFetching;
 
 NotesFetching.propTypes = {
-  isFetching: PropTypes.string,
+  isFetching: PropTypes.bool,
 };
 
 NotesFetching.defaultProps = {
