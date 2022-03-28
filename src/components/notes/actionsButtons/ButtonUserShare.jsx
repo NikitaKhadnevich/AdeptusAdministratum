@@ -21,10 +21,10 @@ const ButtonUserShare = ({ id, showUsersForShare }) => (
 export default ButtonUserShare;
 
 ButtonUserShare.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   showUsersForShare: PropTypes.func,
 };
 ButtonUserShare.defaultProps = {
-  id: 'id',
+  id: 1 || 'id',
   showUsersForShare: 'showUsersForShare',
 };

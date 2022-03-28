@@ -29,16 +29,16 @@ export default SignUpConfirmPass;
 
 SignUpConfirmPass.propTypes = {
   confirmPassword: PropTypes.string,
-  touched: PropTypes.bool,
+  touched: PropTypes.instanceOf(Object),
   onChangeAccum: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.string,
+  errors: PropTypes.instanceOf(Object),
 };
 
 SignUpConfirmPass.defaultProps = {
   confirmPassword: 'confirmPassword',
-  touched: 'touched',
+  touched: {},
   onChangeAccum: 'onChangeAccum',
   handleBlur: 'handleBlur',
-  errors: 'errors',
+  errors: {},
 };

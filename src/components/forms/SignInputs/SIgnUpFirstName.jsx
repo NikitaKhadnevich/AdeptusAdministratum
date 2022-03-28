@@ -16,7 +16,6 @@ const SignUpFirstName = ({
     name='firstName'
     required
     variant='filled'
-    autoFocus
     fullWidth
     label='First Name'
     autoComplete='firstName'
@@ -31,16 +30,16 @@ export default SignUpFirstName;
 
 SignUpFirstName.propTypes = {
   firstName: PropTypes.string,
-  touched: PropTypes.bool,
+  touched: PropTypes.instanceOf(Object),
   onChangeAccum: PropTypes.func,
   handleBlur: PropTypes.func,
-  errors: PropTypes.bool,
+  errors: PropTypes.instanceOf(Object),
 };
 
 SignUpFirstName.defaultProps = {
   firstName: 'firstName',
-  touched: 'touched',
+  touched: {},
   onChangeAccum: 'onChangeAccum',
   handleBlur: 'handleBlur',
-  errors: 'errors',
+  errors: {},
 };

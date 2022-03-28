@@ -16,12 +16,12 @@ export default ButtonEdit;
 ButtonEdit.propTypes = {
   handleItem: PropTypes.func,
   callToEditNote: PropTypes.func,
-  noteList: PropTypes.string,
-  id: PropTypes.number,
+  noteList: PropTypes.oneOfType([PropTypes.any, PropTypes.array]),
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 ButtonEdit.defaultProps = {
   handleItem: 'handleItem',
   callToEditNote: 'callToEditNote',
-  noteList: 'noteList',
-  id: 'id',
+  noteList: [] || undefined,
+  id: 1 || 'id',
 };

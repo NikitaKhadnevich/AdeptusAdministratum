@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Introduce)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=introducing)](https://git.io/typing-svg)
 
 Hello everybody, I nice to introduce yours in Storage Imperialis - **_"Adeptus Administratum"_** ! <br>
 There is small SPA, works like library of minimalistic article about most popular heroes, antagonist, xenos and other person from world infinity war - **Warhammer 40000**.
