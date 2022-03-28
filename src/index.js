@@ -10,6 +10,8 @@ import appTheme from './globalStyles';
 import App from './App';
 import store from './store';
 
+require('dotenv').config();
+
 const container = document.getElementById('root');
 const queryClient = new QueryClient();
 

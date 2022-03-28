@@ -5,7 +5,11 @@ import { runPOSTuser } from '../../../api/_RESTClient/RESTApi';
 import { parseDateOptions } from '../../../config/constants/initNoteData';
 import { NOTES_URL } from '../../../api/_RESTClient/apiConstants';
 import { useQueryWrapper } from '../../../api/auth/useQueryWrapper';
-import { usePostWrapper } from '../../../api/auth/useMutationWrapper';
+import {
+  usePostWrapper,
+  useNewNoteWrapper,
+} from '../../../api/auth/useMutationWrapper';
+
 import {
   PostNote,
   NewPostNotes,
@@ -44,4 +48,5 @@ export {
   INFO_MESSAGES,
   SET_INFINITY_PART,
   notesListPart,
+  useNewNoteWrapper,
 };

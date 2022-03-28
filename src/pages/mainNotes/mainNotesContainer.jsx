@@ -43,7 +43,7 @@ const MainNotesContainer = () => {
   const PAGE_LIMIT = useSelector(pageLimit);
   const [urlForPut, setUrlForPut] = useState('');
   const noteList = useSelector(notesList);
-
+  const notesPath = process.env.REACT_APP_BACKEND_NOTES;
   const { isLoading, isError, data, fetchNextPage, isFetching } =
     useInfinityWrapper(InfiniteNotes, PAGE_LIMIT, PAGE_STEP, isUserAuth);
 
@@ -81,13 +81,13 @@ const MainNotesContainer = () => {
     }
   }, [data]);
 
-  const deleteMutatuion = useDeleteWrapper(DeleteNote, NOTES_URL);
+  const deleteMutatuion = useDeleteWrapper(DeleteNote);
   const updateMutation = useUpdateWrapper(UpdateNote, urlForPut);
 
   const handleItem = (id, currentState = noteList, actionFunction) => {
     const filtredNotes = actionFunction(id, noteList);
     dispatch(SET_NOTES_LIST(filtredNotes));
-    setUrlForPut(`${NOTES_URL}/${id}`);
+    setUrlForPut(`${notesPath}/${id}`);
   };
   const handleDelete = (index, id) => {
     const actualNotes = deleteNote(index, noteList);

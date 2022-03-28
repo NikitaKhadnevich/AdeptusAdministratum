@@ -15,12 +15,13 @@ import {
   usePostWrapper,
   PostNote,
   InfiniteNotes,
+  useNewNoteWrapper,
 } from '../inputAddReceiver';
 
 const FormikAddNoteContainer = () => {
   const queryClient = useQueryClient();
 
-  const { mutateAsync } = usePostWrapper(PostNote, NOTES_URL);
+  const { mutateAsync } = useNewNoteWrapper(PostNote);
 
   const formik = useFormik({
     initialValues: initAddNoteValue,

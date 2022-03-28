@@ -8,7 +8,6 @@ import ListItem from '@mui/material/ListItem';
 import {
   ERROR_MESSAGES,
   INFO_MESSAGES,
-  USERS_URL,
   userData,
   GetUserSharedData,
   useQueryWrapper,
@@ -33,7 +32,7 @@ const SharedNotesList = () => {
 
   const { data, isLoading, isFetching } = useQueryWrapper(
     GetUserSharedData,
-    `${USERS_URL}/${currentUser.id}`
+    `${currentUser.id}`
   );
 
   useEffect(() => {

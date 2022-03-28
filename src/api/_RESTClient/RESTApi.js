@@ -2,26 +2,41 @@
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
 import { ERROR_MESSAGES } from './RestReceiver';
-import { NOTES_URL, INFINITY_COUNTER } from './apiConstants';
+import { INFINITY_COUNTER } from './apiConstants';
 
 const { getError, postError, putError, deleteError } = ERROR_MESSAGES;
 
-function runGETusers(baseUrl) {
-  return axios
-    .get(baseUrl)
+const getUser = axios.create({
+  baseURL: process.env.REACT_APP_BACKEND_USERS,
+});
+
+const getNotes = axios.create({
+  baseURL: process.env.REACT_APP_BACKEND_NOTES,
+});
+
+function runGETusers(userId) {
+  return getUser
+    .get(`${userId}`)
     .then((resNotes) => resNotes.data)
     .catch((err) => new Error(getError));
 }
 
 function runGETInfinityNotes({ pageParam = 1 }) {
-  return axios
-    .get(`${NOTES_URL}?_limit=${INFINITY_COUNTER}&_page=${pageParam}`)
+  return getNotes
+    .get(`?_limit=${INFINITY_COUNTER}&_page=${pageParam}`)
     .then((resNotes) => resNotes)
     .catch((err) => new Error(getError));
 }
 
 function runPOSTuser(baseUrl, postData) {
-  return axios
+  return getUser
+    .post(baseUrl, postData)
+    .then((resNotes) => resNotes.data)
+    .catch((err) => new Error(postError));
+}
+
+function runNewPOST(baseUrl, postData) {
+  return getNotes
     .post(baseUrl, postData)
     .then((resNotes) => resNotes.data)
     .catch((err) => new Error(postError));
@@ -34,8 +49,8 @@ function runUpdateUser(baseUrl, { ...updateUser }) {
     .catch((err) => new Error(putError));
 }
 
-function runDELETEuser(baseUrl, id) {
-  return axios
+function runDELETEuser(baseUrl = '', id) {
+  return getNotes
     .delete(`${baseUrl}/${id}`)
     .then((resNotes) => resNotes.data)
     .catch((err) => new Error(deleteError));
@@ -47,4 +62,5 @@ export {
   runUpdateUser,
   runDELETEuser,
   runGETInfinityNotes,
+  runNewPOST,
 };

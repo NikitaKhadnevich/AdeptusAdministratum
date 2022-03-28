@@ -27,21 +27,23 @@ const FormikUp = () => {
   const navToAuth = useNavigate();
   const { hasAlready } = ERROR_MESSAGES;
   const MIN_ARR_LENGTH = 1;
+  const userPath = process.env.REACT_APP_BACKEND_USERS;
 
   const { isLoading, error, data, isFetching } = useQueryWrapper(
     GetUsersSignUp,
     USERS_URL
   );
 
-  const signUpMutate = useMutation(
-    (formdata) => runPOSTuser(USERS_URL, formdata),
-    {
+  const useNewNoteWrapper = (keyName, baseURL) =>
+    useMutation((newNote) => runPOSTuser(baseURL, newNote), {
+      mutationKey: keyName,
       onSuccess: () => {
         navToAuth(signIn);
         dispatch(IS_SIGN_UP(true));
       },
-    }
-  );
+    });
+
+  const { mutateAsync } = useNewNoteWrapper();
 
   const formik = useFormik({
     initialValues: initSignUpvalue,
@@ -53,7 +55,7 @@ const FormikUp = () => {
       }
       if (existUser.length < MIN_ARR_LENGTH) {
         dispatch(SET_SIGNUP_ERROR(false));
-        signUpMutate.mutateAsync(values);
+        mutateAsync(values);
         actions.resetForm();
       }
     },
