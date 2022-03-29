@@ -35,9 +35,10 @@ I completely agree with this review! BUT!!! Purpose of the application was anoth
 - setup dependies running command `npm install` or `npx install`.
   - _Warning_! When you will see that `node_modules` started download `electron@11.5.0 postinstall` you may to skip its using `ctrl+C`. This dependies is not important
 - starting. For this you should run next command:
-  - `npm run jSon` - starting user data-base (works on `http://localhost:3001/`) x starting article data-base (works on `http://localhost:3100`);
+  - `npm run backDev` - starting user data-base (works on `http://localhost:3001/`) x starting article data-base (works on `http://localhost:3100`);
   - `npm run start` - starting application on (works on `http://localhost:3000`);
   - `npm run test` - run test most importatn blocks;
+- creeds for Log in `Login - asc@yandex.ru / Pass 1234`
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Technologies+and+Tools)](https://git.io/typing-svg)
 
